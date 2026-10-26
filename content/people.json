@@ -9,7 +9,11 @@
     "email": "ghosalt@ornl.gov",
     "photo": "assets/tools/developers/tirthankar.jpg",
     "source": "Role and display name supplied by the project owner; publication author spellings retained in bibliography",
-    "display_name": "Dr. Tirthankar Ghosal"
+    "display_name": "Dr. Tirthankar Ghosal",
+    "recognition": {
+      "label": "SafeLens coauthor · JCDL 2026 Best Demo",
+      "path": "blogs/safelens-reading-between-the-records/"
+    }
   },
   {
     "id": "sanjay",
@@ -21,7 +25,11 @@
     "email": "dass3@ornl.gov",
     "photo": "assets/tools/developers/sanjay.jpg",
     "source": "Role and display name supplied by the project owner; publication author spellings retained in bibliography",
-    "display_name": "Dr. Sanjay Das"
+    "display_name": "Dr. Sanjay Das",
+    "recognition": {
+      "label": "SafeLens coauthor · JCDL 2026 Best Demo",
+      "path": "blogs/safelens-reading-between-the-records/"
+    }
   },
   {
     "id": "ethan",
@@ -78,7 +86,11 @@
     "division": "Data Systems",
     "email": "burchfieldra@ornl.gov",
     "photo": "assets/tools/developers/ryan.jpg",
-    "source": "Supplied team registry; main PI and researcher ordering confirmed by project owner"
+    "source": "Supplied team registry; main PI and researcher ordering confirmed by project owner",
+    "recognition": {
+      "label": "SafeLens coauthor · JCDL 2026 Best Demo",
+      "path": "blogs/safelens-reading-between-the-records/"
+    }
   },
   {
     "id": "kim",
@@ -133,7 +145,11 @@
     "division": "Data Curation",
     "email": "wigginsg@ornl.gov",
     "photo": "assets/tools/developers/gavin.jpg",
-    "source": "Supplied team registry; main PI and researcher ordering confirmed by project owner"
+    "source": "Supplied team registry; main PI and researcher ordering confirmed by project owner",
+    "recognition": {
+      "label": "SafeLens coauthor · JCDL 2026 Best Demo",
+      "path": "blogs/safelens-reading-between-the-records/"
+    }
   },
   {
     "id": "rebe",
@@ -155,7 +171,11 @@
     "division": "",
     "email": "guyas@ornl.gov",
     "photo": "assets/tools/developers/alan.png",
-    "source": "Supplied team registry; main PI and researcher ordering confirmed by project owner"
+    "source": "Supplied team registry; main PI and researcher ordering confirmed by project owner",
+    "recognition": {
+      "label": "SafeLens coauthor · JCDL 2026 Best Demo",
+      "path": "blogs/safelens-reading-between-the-records/"
+    }
   },
   {
     "id": "lauren",

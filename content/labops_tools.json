@@ -16,7 +16,7 @@
     "contributors": [
       {
         "name": "Dr. Tirthankar Ghosal",
-        "role": "Principal Investigator \u00b7 Staff Scientist",
+        "role": "Principal Investigator · Staff Scientist",
         "photo": "assets/tools/developers/tirthankar.jpg",
         "email": "ghosalt@ornl.gov"
       },
@@ -34,7 +34,7 @@
       },
       {
         "name": "Dr. Sanjay Das",
-        "role": "Postdoctoral Researcher \u00b7 Lead R&D personnel",
+        "role": "Postdoctoral Researcher · Lead R&D personnel",
         "photo": "assets/tools/developers/sanjay.jpg",
         "email": "dass3@ornl.gov"
       },
@@ -79,13 +79,13 @@
     "contributors": [
       {
         "name": "Dr. Tirthankar Ghosal",
-        "role": "Principal Investigator \u00b7 Staff Scientist",
+        "role": "Principal Investigator · Staff Scientist",
         "photo": "assets/tools/developers/tirthankar.jpg",
         "email": "ghosalt@ornl.gov"
       },
       {
         "name": "Dr. Sanjay Das",
-        "role": "Postdoctoral Researcher \u00b7 Lead R&D personnel",
+        "role": "Postdoctoral Researcher · Lead R&D personnel",
         "photo": "assets/tools/developers/sanjay.jpg",
         "email": "dass3@ornl.gov"
       },
@@ -138,13 +138,13 @@
     "contributors": [
       {
         "name": "Dr. Tirthankar Ghosal",
-        "role": "Principal Investigator \u00b7 Staff Scientist",
+        "role": "Principal Investigator · Staff Scientist",
         "photo": "assets/tools/developers/tirthankar.jpg",
         "email": "ghosalt@ornl.gov"
       },
       {
         "name": "Dr. Sanjay Das",
-        "role": "Postdoctoral Researcher \u00b7 Lead R&D personnel",
+        "role": "Postdoctoral Researcher · Lead R&D personnel",
         "photo": "assets/tools/developers/sanjay.jpg",
         "email": "dass3@ornl.gov"
       },
@@ -197,7 +197,7 @@
     "contributors": [
       {
         "name": "Dr. Tirthankar Ghosal",
-        "role": "Principal Investigator \u00b7 Staff Scientist",
+        "role": "Principal Investigator · Staff Scientist",
         "photo": "assets/tools/developers/tirthankar.jpg",
         "email": "ghosalt@ornl.gov"
       },
@@ -209,7 +209,7 @@
       },
       {
         "name": "Dr. Sanjay Das",
-        "role": "Postdoctoral Researcher \u00b7 Lead R&D personnel",
+        "role": "Postdoctoral Researcher · Lead R&D personnel",
         "photo": "assets/tools/developers/sanjay.jpg",
         "email": "dass3@ornl.gov"
       },
@@ -264,13 +264,13 @@
     "contributors": [
       {
         "name": "Dr. Tirthankar Ghosal",
-        "role": "Principal Investigator \u00b7 Staff Scientist",
+        "role": "Principal Investigator · Staff Scientist",
         "photo": "assets/tools/developers/tirthankar.jpg",
         "email": "ghosalt@ornl.gov"
       },
       {
         "name": "Dr. Sanjay Das",
-        "role": "Postdoctoral Researcher \u00b7 Lead R&D personnel",
+        "role": "Postdoctoral Researcher · Lead R&D personnel",
         "photo": "assets/tools/developers/sanjay.jpg",
         "email": "dass3@ornl.gov"
       },
@@ -304,6 +304,10 @@
       {
         "label": "Published paper",
         "url": "https://doi.org/10.1145/3805696.3846509"
+      },
+      {
+        "label": "JCDL 2026 Best Demo Award",
+        "url": "https://2026.jcdl.org/awards/"
       }
     ]
   },
@@ -329,20 +333,20 @@
     "group": "compliance-governance",
     "icon": "check",
     "summary": "AI compliance tool that compares regulation versions, maps impacts to internal procedures, and generates change recommendations.",
-    "question": "Regulatory updates\u2014amendments, removals, additions\u2014ripple through dozens of internal procedures. Identifying exactly what changed and what is affected is a manual, weeks-long compliance exercise.",
-    "approach": "Runs an automated multi-stage workflow: regulation diff \u2192 semantic mapping to internal procedures \u2192 agentic impact reasoning \u2192 ranked recommendation generation. Each step is explainable and reviewable.",
+    "question": "Regulatory updates—amendments, removals, additions—ripple through dozens of internal procedures. Identifying exactly what changed and what is affected is a manual, weeks-long compliance exercise.",
+    "approach": "Runs an automated multi-stage workflow: regulation diff → semantic mapping to internal procedures → agentic impact reasoning → ranked recommendation generation. Each step is explainable and reviewable.",
     "outputs": [],
     "paper": null,
     "contributors": [
       {
         "name": "Dr. Tirthankar Ghosal",
-        "role": "Principal Investigator \u00b7 Staff Scientist",
+        "role": "Principal Investigator · Staff Scientist",
         "photo": "assets/tools/developers/tirthankar.jpg",
         "email": "ghosalt@ornl.gov"
       },
       {
         "name": "Dr. Sanjay Das",
-        "role": "Postdoctoral Researcher \u00b7 Lead R&D personnel",
+        "role": "Postdoctoral Researcher · Lead R&D personnel",
         "photo": "assets/tools/developers/sanjay.jpg",
         "email": "dass3@ornl.gov"
       },
@@ -391,7 +395,7 @@
     "contributors": [
       {
         "name": "Dr. Sanjay Das",
-        "role": "Postdoctoral Researcher \u00b7 Lead R&D personnel",
+        "role": "Postdoctoral Researcher · Lead R&D personnel",
         "photo": "assets/tools/developers/sanjay.jpg",
         "email": "dass3@ornl.gov"
       }
@@ -403,14 +407,14 @@
     "group": "compliance-governance",
     "icon": "check",
     "summary": "AI decision impact platform that evaluates how operational or policy decisions affect risk posture, compliance, and operations.",
-    "question": "Decision-makers at national labs need to understand the downstream consequences of policy or operational changes\u2014but the web of regulations, procedures, and dependencies is too complex to trace manually.",
+    "question": "Decision-makers at national labs need to understand the downstream consequences of policy or operational changes—but the web of regulations, procedures, and dependencies is too complex to trace manually.",
     "approach": "Builds a connected knowledge graph of regulations, policies, and organizational procedures. When a question is posed, RAG retrieval plus agentic reasoning traces the impact pathways and cites each link in the chain.",
     "outputs": [],
     "paper": null,
     "contributors": [
       {
         "name": "Dr. Sanjay Das",
-        "role": "Postdoctoral Researcher \u00b7 Lead R&D personnel",
+        "role": "Postdoctoral Researcher · Lead R&D personnel",
         "photo": "assets/tools/developers/sanjay.jpg",
         "email": "dass3@ornl.gov"
       }
@@ -422,14 +426,14 @@
     "group": "safety-risk",
     "icon": "shield",
     "summary": "AI vision tool that analyzes images of any space or equipment with text context to rapidly identify safety hazards.",
-    "question": "Safety inspections at ORNL require trained personnel to manually walk spaces and document hazards. Coverage is incomplete, subjective, and slow\u2014especially for time-sensitive or remote environments.",
+    "question": "Safety inspections at ORNL require trained personnel to manually walk spaces and document hazards. Coverage is incomplete, subjective, and slow—especially for time-sensitive or remote environments.",
     "approach": "Takes an image of a space or piece of equipment plus optional text context, runs it through a multimodal vision-language model for safety analysis, and outputs a structured hazard analysis with risk scores and corrective actions.",
     "outputs": [],
     "paper": null,
     "contributors": [
       {
         "name": "Dr. Sanjay Das",
-        "role": "Postdoctoral Researcher \u00b7 Lead R&D personnel",
+        "role": "Postdoctoral Researcher · Lead R&D personnel",
         "photo": "assets/tools/developers/sanjay.jpg",
         "email": "dass3@ornl.gov"
       }
@@ -460,13 +464,13 @@
     "contributors": [
       {
         "name": "Dr. Tirthankar Ghosal",
-        "role": "Principal Investigator \u00b7 Staff Scientist",
+        "role": "Principal Investigator · Staff Scientist",
         "photo": "assets/tools/developers/tirthankar.jpg",
         "email": "ghosalt@ornl.gov"
       },
       {
         "name": "Dr. Sanjay Das",
-        "role": "Postdoctoral Researcher \u00b7 Lead R&D personnel",
+        "role": "Postdoctoral Researcher · Lead R&D personnel",
         "photo": "assets/tools/developers/sanjay.jpg",
         "email": "dass3@ornl.gov"
       },

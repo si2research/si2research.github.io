@@ -17,6 +17,9 @@ def register(page,hero,section,read):
   def detail(l,p=post):
    body=''
    if p.get('announcement'):body+=f'<div class="blog-announcement"><span class="status-badge accepted">{esc(p["announcement"])}</span><span>{esc(p["reading_time"])}</span></div>'
+   if p.get('award_note'):
+    note=p['award_note']
+    body+=f'<aside class="blog-award-note"><span class="label">Conference recognition</span><h2>{esc(note["title"])}</h2><p>{esc(note["body"])}</p><a class="text-link" href="{esc(note["url"],quote=True)}">Official JCDL honors ↗</a></aside>'
    for index,item in enumerate(p['sections']):
     body+=f'<h2>{esc(item["heading"])}</h2><p>{cite_text(item["body"])}</p>'
     figures=p.get('figures',[])+([p['figure']] if p.get('figure') else [])
@@ -40,12 +43,12 @@ def register(page,hero,section,read):
   page('blogs/'+post['slug'],post['title'],'blogs',detail)
  def award_card(a,l):
   url=a.get('url') or l(a['related_path'])
-  return f'<article class="recognition-card"><div class="recognition-top"><span class="award-symbol" aria-hidden="true">🏆</span><span class="label">{esc(a["category"])}</span></div><span class="recognition-venue">{esc(a["venue"])}</span><h2>{esc(a["award"])}</h2><p class="award-recipient">{esc(a["authors"])}</p><h3>{esc(a["title"])}</h3><p>{esc(a["description"])}</p><a class="text-link" href="{esc(url,quote=True)}">{esc(a["link_label"])} ↗</a></article>'
+  return f'<article class="recognition-card"><div class="recognition-top"><span class="award-symbol" aria-hidden="true">🏆</span><span class="label">{esc(a["category"])}</span></div><span class="recognition-venue">{esc(a["venue"])}</span><h2>{esc(a["award"])}</h2><p class="award-recipient">{esc(a["authors"])}</p><h3>{esc(a["title"])}</h3><p>{esc(a["description"])}</p><div class="paper-actions"><a class="text-link" href="{esc(url,quote=True)}">{esc(a["link_label"])} ↗</a>{f'<a class="text-link" href="{l(a["related_path"])}">Research story →</a>' if a.get("paper_url") else ''}</div></article>'
  def awards(l):
   items=[('SC ’26 · Accepted','Recall Is Not Honesty','Benchmarking multi-agent architectures for trustworthy HPC operational analytics.','projects/ai-for-hpc/recall-is-not-honesty/'),('WACV 2027 · Accepted','BLUEPRINT','Multimodal retrieval for complex engineering drawings and documents.','projects/ai4labops/tools/blueprint/')]
   return hero('Awards & recognition','A place to celebrate team achievements and research milestones.',l)+section(heading('Awards & honors')+'<div class="awards-grid">'+''.join(award_card(a,l) for a in read('awards'))+'</div>')+section(heading('Research milestones · Conference acceptances')+cards(items,l))
  page('awards','Awards & recognition','awards',awards)
  def event_card(e,l):
-  return f'<article class="event-card"><div class="event-date"><strong>{esc(e["date"])}</strong><span>{esc(e["status"])}</span></div><div><span class="label">{esc(e["location"])}</span><h3>{esc(e["title"])}</h3><p>{esc(e["body"])}</p><a class="text-link" href="{l("projects/ai4labops/acknowledgments/")}">Related initiative →</a></div></article>'
+  return f'<article class="event-card"><div class="event-date"><strong>{esc(e["date"])}</strong><span>{esc(e["status"])}</span></div><div><span class="label">{esc(e["location"])}</span><h3>{esc(e["title"])}</h3><p>{esc(e["body"])}</p><a class="text-link" href="{l(e.get("path","projects/ai4labops/acknowledgments/"))}">Related research →</a></div></article>'
  events=read('events')
  page('events','Events','events',lambda l:hero('Events & scientific exchange','Symposia and opportunities to connect around AI for scientific operations.',l)+(section(heading('Upcoming events')+''.join(event_card(e,l) for e in events if e['status']=='Planned')) if any(e['status']=='Planned' for e in events) else '')+section(heading('Past events')+''.join(event_card(e,l) for e in events if e['status']=='Past')))

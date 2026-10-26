@@ -1,12 +1,12 @@
 [
   {
     "slug": "safelens-reading-between-the-records",
-    "tag": "JCDL 2026 · Research story",
+    "tag": "JCDL 2026 · Best Demo Award",
     "title": "SafeLens: reading between the safety records",
     "summary": "A near-miss report is one observation. Hundreds of thousands of reports can become organizational memory—if we know how to ask useful questions.",
     "related": "projects/ai4labops/tools/safelens/",
     "reading_time": "4 min read",
-    "announcement": "Published at JCDL 2026",
+    "announcement": "Best Demo Award · JCDL 2026",
     "sections": [
       {
         "heading": "The signal is already there",
@@ -104,6 +104,11 @@
           "20 of 20"
         ]
       ]
+    },
+    "award_note": {
+      "title": "Best Demo at JCDL 2026",
+      "body": "SafeLens has received the Best Demo Award at JCDL 2026. We thank Oak Ridge National Laboratory for sponsoring this research, and Tirthankar Ghosal, Ryan Burchfield, Alan Guy, Gavin Wiggins, and the full team for their guidance and collaboration.",
+      "url": "https://2026.jcdl.org/awards/"
     }
   },
   {

@@ -1,5 +1,20 @@
 [
   {
+    "id": "safelens-best-demo-2026",
+    "title": "SafeLens: AI-Augmented Exploratory Analysis over Organizational Safety Records for Actionable Insights Generation",
+    "authors": "Sanjay Das, Ryan Burchfield, Gavin Wiggins, Alan Guy, and Tirthankar Ghosal",
+    "award": "Best Demo Award",
+    "venue": "JCDL 2026",
+    "year": 2026,
+    "category": "Research award",
+    "description": "SafeLens received the Best Demo Award at JCDL 2026 for AI-augmented exploratory analysis of organizational safety records. The work surfaces ranked risks, recurring patterns, and best practices to support evidence-backed operational review.",
+    "url": "https://2026.jcdl.org/awards/",
+    "link_label": "View official conference honors",
+    "paper_url": "https://doi.org/10.1145/3805696.3846509",
+    "related_path": "blogs/safelens-reading-between-the-records/",
+    "provenance": "Verified against the official JCDL 2026 awards page on October 26, 2026."
+  },
+  {
     "title": "Enginuity: A Dataset and Benchmark for Vision-Language Understanding of Engineering Diagrams",
     "authors": "Ethan Seefried et al.",
     "award": "AI4Science Dataset award",

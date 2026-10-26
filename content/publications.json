@@ -74,7 +74,9 @@
     "tool": "safelens",
     "provenance": "Publication status and DOI supplied by the authors",
     "doi": "10.1145/3805696.3846509",
-    "blog_path": "blogs/safelens-reading-between-the-records/"
+    "blog_path": "blogs/safelens-reading-between-the-records/",
+    "award": "Best Demo Award · JCDL 2026",
+    "award_url": "https://2026.jcdl.org/awards/"
   },
   {
     "id": "hazdial",

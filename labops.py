@@ -11,7 +11,10 @@ def register(page,hero,section,icon,external,read):
  def tool_url(t):return base+'tools/'+t['slug']+'/'
  def subnav(l):return '<nav class="hub-nav wrap" aria-label="AI for Laboratory Operations navigation">'+''.join(f'<a href="{l(base+route)}">{label}</a>' for route,label in [('', 'Overview'),('research/','Research themes'),('tools/','Tools & benchmarks'),('publications/','Publications'),('acknowledgments/','Acknowledgments')])+'</nav>'
  def header(title,summary,l,parent=None):return hero(title,summary,l,parent or (base,'AI for Laboratory Operations'))+subnav(l)
- def badge(p):return f'<span class="status-badge {p["status"].lower()}">{esc(p["status"])}</span>'
+ def badge(p):
+  result=f'<span class="status-badge {p["status"].lower()}">{esc(p["status"])}</span>' 
+  if p.get('award'):result+=f'<a class="award-badge" href="{external(p["award_url"])}"><span aria-hidden="true">🏆</span> {esc(p["award"])}</a>' 
+  return result
  def paper_card(p,l):
   citation=f'{p["authors"]} ({p["year"]}). {p["title"]}. {p["venue"]}'+(f', pp. {p["pages"]}' if p['pages'] else '')+('. Submitted.' if p['status']=='Submitted' else '.')
   action=f'<a class="text-link" href="{external(p["url"])}">Read paper ↗</a>' if p['url'] else ''
