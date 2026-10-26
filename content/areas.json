@@ -23,7 +23,7 @@
   {
     "slug": "quantum",
     "title": "Quantum",
-    "summary": "Quantum research, verification, validation, and Quantum Claw.",
+    "summary": "Verifiable scientific agents and quantum error-correction research with QuantumScience Claw.",
     "icon": "atom",
     "color": "pink"
   },

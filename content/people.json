@@ -13,6 +13,10 @@
     "recognition": {
       "label": "SafeLens coauthor · JCDL 2026 Best Demo",
       "path": "blogs/safelens-reading-between-the-records/"
+    },
+    "project_leadership": {
+      "label": "Research lead · QuantumScience Claw",
+      "path": "projects/quantum-claw/"
     }
   },
   {
@@ -47,7 +51,11 @@
     "email": "seefriedej@ornl.gov",
     "photo": "assets/tools/developers/ethan.png",
     "source": "Role and display name supplied by the project owner; publication author spellings retained in bibliography",
-    "display_name": "Dr. Ethan Seefried"
+    "display_name": "Dr. Ethan Seefried",
+    "project_leadership": {
+      "label": "Research lead · QuantumScience Claw",
+      "path": "projects/quantum-claw/"
+    }
   },
   {
     "id": "ran",

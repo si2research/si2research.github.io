@@ -1,0 +1,122 @@
+{
+  "name": "QuantumScience Claw",
+  "short_name": "QSC",
+  "slug": "quantum-claw",
+  "status": "Ongoing research",
+  "leads": [
+    "Ethan Seefried",
+    "Tirthankar Ghosal"
+  ],
+  "question": "Can a local AI agent coordinate quantum error-correction software while preserving scientific correctness, reproducibility, and evidence?",
+  "summary": "A locally deployed scientific agent for verifiable quantum error-correction workflows.",
+  "architecture": [
+    {
+      "component": "Local language model",
+      "detail": "Muse Glimmer 30B through llama.cpp"
+    },
+    {
+      "component": "Agent runtime",
+      "detail": "OpenClaw"
+    },
+    {
+      "component": "Scientific skill execution",
+      "detail": "Selected MIT ScienceClaw components for registered skills and artifact provenance"
+    },
+    {
+      "component": "Controlled scientific operations",
+      "detail": "QHPC Ecosystem (EQO), typed operations, and approved computational workers"
+    },
+    {
+      "component": "Quantum software",
+      "detail": "Stim, Sinter, PyMatching, and other supported tools"
+    },
+    {
+      "component": "Deployment",
+      "detail": "Local NVIDIA DGX GB10 system"
+    }
+  ],
+  "layers": [
+    {
+      "title": "Execution",
+      "body": "The scientific software runs and produces an artifact."
+    },
+    {
+      "title": "Scientific verification",
+      "body": "The artifact passes the relevant mathematical or numerical checks."
+    },
+    {
+      "title": "Task completion",
+      "body": "The agent correctly submits and communicates the verified outcome."
+    }
+  ],
+  "benchmarks": [
+    [
+      "StabilizerBench B1",
+      "129 / 192 completed",
+      "14 code families; 300-second deadline per task"
+    ],
+    [
+      "Algebra and code analysis",
+      "23 / 24 credited",
+      "Verified scientific evidence for all 24 tasks"
+    ],
+    [
+      "Surface-code memory",
+      "18 / 18 completed",
+      "10,000 simulation shots per configuration"
+    ],
+    [
+      "Decoder compatibility",
+      "22 / 24 credited",
+      "23 verified outcomes; valid rejections matter"
+    ],
+    [
+      "Selected Google measured data",
+      "2 / 2 analyses completed",
+      "50,000 shots in each selected analysis"
+    ],
+    [
+      "ECCentric reproduction",
+      "2 selected configurations executed",
+      "Limited reproduction, not the full external study"
+    ],
+    [
+      "Evidence replay",
+      "68 / 68 outcomes reconstructed",
+      "Replay within the pinned computational environment"
+    ]
+  ],
+  "b1_failures": [
+    [
+      "Passing verification, no accepted submission",
+      "12"
+    ],
+    [
+      "Official verifier reached without passing",
+      "2"
+    ],
+    [
+      "No recorded official verifier invocation",
+      "49"
+    ]
+  ],
+  "limitations": [
+    "Benchmark configurations do not expose identical scientific capabilities: QSC has a specialized Stim synthesis operation. Results evaluate the complete system, not the isolated effect of orchestration or verification.",
+    "The deterministic synthesis backend can solve the benchmark instances directly; agent completion remains lower, highlighting the gap between tool capability and end-to-end reliability.",
+    "One adaptive episode met six precision targets below a 49,152-shot budget. It does not establish better sample efficiency than conventional policies.",
+    "A 24-configuration, 1.2-million-shot study failed its prespecified goodness-of-fit criterion, so no threshold estimate was accepted.",
+    "Infrastructure detected seven controlled faults. The agent correctly completed failure reporting in two cases, rising to three with more explicit guidance.",
+    "Replay reconstructs recorded evidence in a pinned environment; it is not independent replication with different algorithms or implementations."
+  ],
+  "latency": {
+    "inference_requests": 450,
+    "worker_processes": 74,
+    "episodes": 68,
+    "inference_median_seconds": 22.7,
+    "worker_median_seconds": 0.49,
+    "episode_median_seconds": 134,
+    "note": "Different denominators: these medians are not an additive end-to-end time breakdown."
+  },
+  "publication": "Research in progress. Evaluation results describe the current system.",
+  "provenance": "Evaluation snapshot supplied by the project owner in the QuantumScience Claw research narrative; led by Ethan Seefried and Tirthankar Ghosal."
+}

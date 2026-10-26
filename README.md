@@ -94,3 +94,6 @@ The workflow builds and checks `dist/`, then publishes that generated directory.
 
 Confirm **Pages → Source → GitHub Actions** first. Branch publishing and the custom deployment workflow can overwrite each other when both are active. After correcting the source, rerun **Deploy SI² to GitHub Pages** and check its final deployment result. A successful **Check website** run validates the source but does not publish it.
 
+## QuantumScience Claw
+
+QuantumScience Claw (QSC) is an ongoing research project led by Ethan Seefried and Tirthankar Ghosal. The current owner-supplied evaluation snapshot is in content/quantum_claw.json; quantum.py renders its project page. The blog in content/blogs.json distinguishes execution, verification, and accepted completion, and preserves tool-access confounds, limited reproduction scope, replay conditions, and the rejected threshold estimate. The original conceptual workflow is assets/qsc-workflow.svg. Project resources may be added to artifacts/quantum-claw/. No paper DOI, code URL, or external publication status is inferred.

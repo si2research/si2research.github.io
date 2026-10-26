@@ -1,5 +1,101 @@
 [
   {
+    "slug": "quantumscience-claw-verifiable-science",
+    "tag": "QuantumScience Claw · Research in progress",
+    "title": "QuantumScience Claw: a correct calculation is only part of the story",
+    "summary": "What happens when a local AI agent can run real quantum software—and we check what it actually did?",
+    "related": "projects/quantum-claw/",
+    "reading_time": "5 min read",
+    "announcement": "Ongoing research · Led by Ethan Seefried & Tirthankar Ghosal",
+    "sections": [
+      {
+        "heading": "A plausible answer is not a scientific result",
+        "body": "Imagine asking an assistant to prepare a quantum state. It returns a convincing circuit diagram. Did that circuit actually prepare the right state? Was anything simulated? And did the final answer include the verified artifact? QuantumScience Claw (QSC), led by Ethan Seefried and Tirthankar Ghosal, investigates those questions by connecting a local AI agent to real quantum error-correction software."
+      },
+      {
+        "heading": "Let the scientific tools do the scientific work",
+        "body": "Quantum error correction encodes information across physical qubits so errors can be detected and corrected. Many tasks have precise checks: circuit constraints, stabilizer properties, and simulation counts. QSC uses a local Muse Glimmer 30B model through llama.cpp, OpenClaw as its runtime, selected MIT ScienceClaw components, and controlled operations through the QHPC Ecosystem (EQO). Established software—including Stim, Sinter, and PyMatching—performs the calculations. The model coordinates their use; it does not replace their algorithms."
+      },
+      {
+        "heading": "Three finish lines, not one",
+        "body": "Think of a laboratory test: running the instrument, passing a quality check, and delivering the result to the researcher are different events. QSC separates execution, scientific verification, and accepted final submission in the same way. On 192 StabilizerBench B1 tasks spanning 14 code families, the complete system finished 129 within a 300-second deadline per task. Among the remaining 63, twelve passed verification without an accepted submission, two reached the verifier without passing, and 49 had no recorded official verifier call."
+      },
+      {
+        "heading": "The number needs its context",
+        "body": "The deterministic circuit-synthesis backend can solve these benchmark instances directly. QSC also exposes a specialized Stim synthesis operation that the comparison configurations do not receive in the same form. The experiment therefore shows the capability of the complete agent-plus-tools system. It does not isolate a causal benefit from orchestration, or show that a language model improved the underlying synthesis algorithm. The unfinished tasks make the next research problem concrete: turn available scientific capability into reliable task completion."
+      },
+      {
+        "heading": "From circuits to evidence-driven experiments",
+        "body": "The numerical campaign extends beyond circuit generation: algebra, code parameters, surface-code memory simulations, decoder compatibility, selected measured data, and limited external-artifact reproduction. In one adaptive episode, the agent used intermediate evidence to meet six precision targets below the allowed 49,152-shot budget, while a trusted controller enforced budgets and uncertainty calculations. That is an encouraging evidence-driven loop—not a controlled demonstration of superior sampling efficiency."
+      },
+      {
+        "heading": "Sometimes the right answer is no conclusion",
+        "body": "A larger study ran 1.2 million shots across 24 configurations. Its fit failed the prespecified goodness-of-fit test, so the system did not accept a threshold estimate. Failure handling exposes another gap: the infrastructure detected all seven injected faults, but the agent completed the failure-reporting protocol in only two cases, improving to three with explicit guidance. Preventing invalid results and communicating failure are separate capabilities."
+      },
+      {
+        "heading": "Keep the receipts—and mind the overhead",
+        "body": "Evidence replay reconstructed all 68 recorded numerical-campaign outcomes in the pinned environment, including unsuccessful episodes. This is auditability, not independent replication. On the local DGX GB10 deployment, median inference requests took 22.7 seconds, worker processes 0.49 seconds, and complete episodes about 134 seconds. These have different denominators and cannot be added into a precise runtime breakdown. They nevertheless motivate attention to coordination overhead."
+      },
+      {
+        "heading": "The next milestone is reliable completion",
+        "body": "The team is investigating the unfinished benchmark cases, deadline sensitivity, matched access to synthesis algorithms, and better scientific interfaces. The broader lesson is simple: scientific agents need appropriate tools, checks independent of generated text, preserved evidence, and a reliable final handoff. QuantumScience Claw is ongoing research into that full chain—not a claim of unrestricted autonomous discovery."
+      }
+    ],
+    "figures": [
+      {
+        "path": "assets/qsc-workflow.svg",
+        "alt": "QSC workflow: research question, local agent, typed scientific operation, controlled worker, verified artifact, and final submission.",
+        "caption": "Conceptual workflow based on the team’s supplied research narrative. Execution, verification, and final submission are checked separately.",
+        "source": "https://si2research.github.io/projects/quantum-claw/",
+        "source_label": "Project context",
+        "after_section": 1
+      }
+    ],
+    "results": {
+      "after_section": 4,
+      "caption": "Selected outcomes from the supplied evaluation snapshot. Verified evidence and credited completion are reported separately.",
+      "headers": [
+        "Workload",
+        "Reported outcome"
+      ],
+      "rows": [
+        [
+          "StabilizerBench B1",
+          "129 / 192 completed"
+        ],
+        [
+          "Algebra and code analysis",
+          "23 / 24 credited; evidence for 24"
+        ],
+        [
+          "Surface-code memory",
+          "18 / 18 completed"
+        ],
+        [
+          "Decoder compatibility",
+          "22 / 24 credited; 23 verified"
+        ],
+        [
+          "Evidence replay",
+          "68 / 68 recorded outcomes reconstructed"
+        ]
+      ]
+    },
+    "resources_heading": "Explore the research",
+    "resources": [
+      {
+        "label": "Project, evidence & limitations",
+        "path": "projects/quantum-claw/"
+      },
+      {
+        "label": "Quantum research",
+        "path": "research/quantum/"
+      }
+    ],
+    "source_note": "This research update summarizes the experimental narrative supplied by the project team. Results describe the current evaluated system; they are not presented as a peer-reviewed publication or as superiority over conventional QEC algorithms.",
+    "provenance": "Evaluation snapshot supplied by the project owner in the QuantumScience Claw research narrative; led by Ethan Seefried and Tirthankar Ghosal."
+  },
+  {
     "slug": "safelens-reading-between-the-records",
     "tag": "JCDL 2026 · Best Demo Award",
     "title": "SafeLens: reading between the safety records",

@@ -42,5 +42,22 @@
       "Jinchu Li"
     ],
     "links": []
+  },
+  {
+    "slug": "quantum-claw",
+    "title": "QuantumScience Claw (QSC)",
+    "area": "quantum",
+    "areas": [
+      "quantum",
+      "autonomous"
+    ],
+    "summary": "A locally deployed scientific agent for verifiable quantum error-correction workflows.",
+    "status": "Ongoing research",
+    "body": "Ethan Seefried and Tirthankar Ghosal lead QuantumScience Claw, connecting a local language-model agent to controlled, verifiable quantum error-correction operations.",
+    "contributors": [
+      "Ethan Seefried",
+      "Tirthankar Ghosal"
+    ],
+    "links": []
   }
 ]

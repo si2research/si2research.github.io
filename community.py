@@ -25,7 +25,7 @@ def register(page,hero,section,read):
     figures=p.get('figures',[])+([p['figure']] if p.get('figure') else [])
     for figure in figures:
      if figure['after_section']==index:
-      body+=f'<figure class="blog-figure"><a href="{l(figure["path"])}"><img src="{l(figure["path"])}" alt="{esc(figure["alt"])}" loading="lazy"></a><figcaption>{cite_text(figure["caption"])} <a href="{esc(figure["source"],quote=True)}">Paper figure ↗</a></figcaption></figure>'
+      body+=f'<figure class="blog-figure"><a href="{l(figure["path"])}"><img src="{l(figure["path"])}" alt="{esc(figure["alt"])}" loading="lazy"></a><figcaption>{cite_text(figure["caption"])} <a href="{esc(figure["source"],quote=True)}">{esc(figure.get("source_label","Paper figure"))} ↗</a></figcaption></figure>'
     if p.get('results') and index==p['results'].get('after_section',2):
      result=p['results']
      body+='<div class="blog-table"><table><caption>'+esc(result['caption'])+'</caption><thead><tr>'+''.join(f'<th scope="col">{esc(x)}</th>' for x in result['headers'])+'</tr></thead><tbody>'
@@ -39,6 +39,7 @@ def register(page,hero,section,read):
     body+='</div>'
    if p.get('bibliography'):
     body+='<section class="blog-bibliography" aria-label="Bibliography"><h2>Bibliography</h2><ol>'+''.join(f'<li id="reference-1"><a href="{esc(x["url"],quote=True)}">{esc(x["text"])}</a></li>' for x in p['bibliography'])+'</ol></section>'
+   if p.get('source_note'):body+=f'<aside class="notice">{esc(p["source_note"])}</aside>'
    return hero(p['title'],p['summary'],l,('blogs/','Research perspectives'))+section('<article class="prose blog-prose"><span class="label">Research perspective · SI² — SuperIntelligence for Science</span>'+body+f'<a class="text-link" href="{l(p["related"])}">Explore related research →</a></article>')
   page('blogs/'+post['slug'],post['title'],'blogs',detail)
  def award_card(a,l):
