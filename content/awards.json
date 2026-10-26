@@ -1,5 +1,47 @@
 [
   {
+    "id": "sanjay-orpex-presidents-2026",
+    "title": "Sanjay Das",
+    "authors": "Dr. Sanjay Das",
+    "award": "ORPEX President’s Award",
+    "venue": "Oak Ridge Postdoctoral Association · 2026",
+    "year": 2026,
+    "category": "Individual award",
+    "description": "Recognizing Sanjay Das through the ORPEX President’s Award. Sanjay acknowledged Rashika Gupta, ORPA Vice President, and Moody Altamimi, Director of the Office of Research Education, for presenting the honor, and thanked mentor Tirthankar Ghosal for his guidance.",
+    "url": "https://www.linkedin.com/in/sanjay-das/",
+    "related_path": "people/",
+    "link_label": "Sanjay’s profile",
+    "provenance": "Award and presenters supplied by project owner; announcement shared October 2."
+  },
+  {
+    "id": "sanjay-orpa-excellence-2026",
+    "title": "Sanjay Das",
+    "authors": "Dr. Sanjay Das",
+    "award": "ORPA All-Around Excellence Award",
+    "venue": "Oak Ridge Postdoctoral Association · 2026",
+    "year": 2026,
+    "category": "Individual award",
+    "description": "Sanjay Das received the ORPA All-Around Excellence Award and was elected Research Co-Chair on the ORPA Board, extending his contributions to research and the postdoctoral community.",
+    "url": "https://www.linkedin.com/in/sanjay-das/",
+    "related_path": "people/",
+    "link_label": "Sanjay’s profile",
+    "provenance": "Award and leadership role supplied by project owner."
+  },
+  {
+    "id": "cosmology-orpa-poster-2026",
+    "title": "AI-Powered Cosmological Simulation for Dark Energy Signatures",
+    "authors": "Sanjay Das · COSMOAGENT research",
+    "award": "1st Place Poster Award",
+    "venue": "14th ORPA Symposium · ORNL · 2026",
+    "year": 2026,
+    "category": "Research poster award",
+    "description": "First-place poster recognition at the 14th ORPA Symposium at ORNL for work on AI-powered cosmological simulation and dark energy signatures. The research connects agentic workflows with large-scale simulation on Frontier.",
+    "url": "",
+    "related_path": "projects/agentic-cosmology/",
+    "link_label": "Explore the cosmology project",
+    "provenance": "Award, venue, and poster title supplied by project owner; title copyedited for display."
+  },
+  {
     "id": "safelens-best-demo-2026",
     "title": "SafeLens: AI-Augmented Exploratory Analysis over Organizational Safety Records for Actionable Insights Generation",
     "authors": "Sanjay Das, Ryan Burchfield, Gavin Wiggins, Alan Guy, and Tirthankar Ghosal",

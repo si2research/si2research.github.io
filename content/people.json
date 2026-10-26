@@ -19,7 +19,7 @@
     "id": "sanjay",
     "name": "Sanjay Das",
     "category": "researchers",
-    "role": "Postdoctoral Researcher · Lead R&D personnel",
+    "role": "Postdoctoral Research Associate · Lead R&D personnel",
     "affiliation": "Oak Ridge National Laboratory",
     "division": "Learning Systems group · CSMD · CCSD",
     "email": "dass3@ornl.gov",
@@ -29,7 +29,13 @@
     "recognition": {
       "label": "SafeLens coauthor · JCDL 2026 Best Demo",
       "path": "blogs/safelens-reading-between-the-records/"
-    }
+    },
+    "service": "Research Co-Chair, Oak Ridge Postdoctoral Association (ORPA) Board",
+    "honors": [
+      "ORPEX President’s Award",
+      "ORPA All-Around Excellence Award",
+      "1st Place Poster · 14th ORPA Symposium"
+    ]
   },
   {
     "id": "ethan",

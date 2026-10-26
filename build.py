@@ -27,7 +27,7 @@ def external(url):
  return esc(url,quote=True)
 def card(p,link):
  a=amap[p['area']]
- return f'''<article class="project-card {a['color']}" data-project data-area="{a['slug']}"><a href="{link('projects/'+p['slug']+'/')}" aria-label="Explore {esc(p['title'])}"><div class="project-art">{icon(a)}</div></a><div class="project-content"><a class="label" href="{link('research/'+a['slug']+'/')}">{esc(a['title'])}</a><h3><a href="{link('projects/'+p['slug']+'/')}">{esc(p['title'])}</a></h3><p>{esc(p['summary'])}</p><div class="project-bottom"><span>Project overview</span><a class="text-link" href="{link('projects/'+p['slug']+'/')}">Explore <span aria-hidden="true">↗</span></a></div></div></article>'''
+ return f'''<article class="project-card {a['color']}" data-project data-area="{esc(" ".join(dict.fromkeys([p["area"]]+p.get("areas",[]))))}"><a href="{link('projects/'+p['slug']+'/')}" aria-label="Explore {esc(p['title'])}"><div class="project-art">{icon(a)}</div></a><div class="project-content"><a class="label" href="{link('research/'+a['slug']+'/')}">{esc(a['title'])}</a><h3><a href="{link('projects/'+p['slug']+'/')}">{esc(p['title'])}</a></h3><p>{esc(p['summary'])}</p><div class="project-bottom"><span>Project overview</span><a class="text-link" href="{link('projects/'+p['slug']+'/')}">Explore <span aria-hidden="true">↗</span></a></div></div></article>'''
 def area_cards(link): return '<div class="areas">'+''.join(f'''<a class="area-card {a['color']}" href="{link('research/'+a['slug']+'/')}">{icon(a)}<h3>{a['title']}</h3><p>{a['summary']}</p><span class="arrow" aria-hidden="true">↗</span></a>''' for a in areas)+'</div>'
 def page(route,title,active,render):
  dest=OUT/route/'index.html'; dest.parent.mkdir(parents=True,exist_ok=True)
@@ -55,7 +55,7 @@ def network_art(link):
  return art
 def home(link):
  nodes=''.join(f'<a class="node n{n}" href="{link("research/"+a["slug"]+"/")}">{icon(a)}<span>{esc(a["title"])}</span></a>' for n,a in enumerate(areas,1))
- return '<section class="hero"><div class="wrap hero-grid"><div><div class="eyebrow">SI² Research</div><h1>SuperIntelligence<br><em>for Science.</em></h1><p>Research in AI for science, engineering, and autonomous discovery—from computing and quantum systems to laboratories and manufacturing.</p><div class="actions"><a class="button" href="'+link('projects/')+'">Explore research →</a><a class="button secondary" href="'+link('publications/')+'">Publications</a></div></div><div class="constellation" aria-label="Explore our connected research areas">'+network_art(link)+'<div class="network-areas">'+nodes+'</div></div></div></section>'+section('<div class="section-heading"><h2>Research areas</h2></div>'+area_cards(link))+home_spotlight(link)
+ return '<section class="hero"><div class="wrap hero-grid"><div><div class="eyebrow">SI² Research</div><h1>SuperIntelligence<br><em>for Science.</em></h1><p>Research in AI for science, engineering, and autonomous discovery—from computing and quantum systems to laboratories and manufacturing.</p><div class="actions"><a class="button" href="'+link('projects/')+'">Explore research →</a><a class="button secondary" href="'+link('publications/')+'">Publications</a></div></div><div class="constellation" aria-label="Explore our connected research areas">'+network_art(link)+'<div class="network-areas">'+nodes+'</div></div></div></section>'+section('<div class="section-heading"><h2>Research areas</h2></div>'+area_cards(link))+home_spotlight(link)+section('<div class="section-heading"><h2>Research & community highlights</h2></div><div class="community-grid"><article class="community-card"><span class="label">INCITE 2026 · Frontier</span><h3>COSMOAGENT</h3><p>Expert-supervised agentic cosmological simulations, demonstrated at 4096³ resolution.</p><a class="text-link" href="'+link('projects/agentic-cosmology/')+'">Explore the project →</a></article><article class="community-card"><span class="label">ORPA recognition</span><h3>Excellence in research & service</h3><p>Sanjay Das receives the ORPEX President’s Award and ORPA All-Around Excellence Award, and joins the ORPA Board as Research Co-Chair.</p><a class="text-link" href="'+link('awards/')+'">Awards & recognition →</a></article><article class="community-card"><span class="label">14th ORPA Symposium</span><h3>First-place poster</h3><p>AI-powered cosmological simulation for dark energy signatures receives first-place poster recognition at ORNL.</p><a class="text-link" href="'+link('projects/agentic-cosmology/')+'">Discover the research →</a></article></div>')
 def catalogue(link):
  filters='<div class="filters" role="group" aria-label="Filter projects by research area"><button data-filter="all" aria-pressed="true">All projects</button>'+''.join(f'<button data-filter="{a["slug"]}" aria-pressed="false">{a["title"]}</button>' for a in areas)+'</div>'
  return hero('Our projects','Explore the ideas, tools, and research taking shape across SI².',link)+section('<div class="search-row"><label for="project-search" class="eyebrow">Find a project</label><input id="project-search" type="search" placeholder="Search by name or topic…"><span id="result-count" role="status"></span></div>'+filters+'<div class="project-grid">'+''.join(card(p,link) for p in projects)+'</div><p id="empty-results" role="status" hidden>No projects match. Try another search or research area.</p>')
@@ -67,12 +67,16 @@ page('research','Research','research',lambda l:hero('Research without silos','AI
 page('projects','Projects','projects',catalogue)
 for a in areas:
  def area_detail(l,a=a):
-  selected=[p for p in projects if p['area']==a['slug']]
+  selected=[p for p in projects if p['area']==a['slug'] or a['slug'] in p.get('areas',[])]
   body=section('<div class="section-heading"><h2>Projects in this area</h2></div><div class="project-grid">'+''.join(card(p,l) for p in selected)+'</div>') if selected else ''
   return hero(a['title'],a['summary'],l,('research/','Research'))+body
  page('research/'+a['slug'],a['title'],'research',area_detail)
 for p in projects:
  if p['slug'] in ('ai4labops','ai-for-hpc'): continue
+ if p['slug']=='agentic-cosmology':
+  from cosmology import project_page
+  page('projects/agentic-cosmology',p['title'],'projects',lambda l:project_page(l,hero,section,read))
+  continue
  def detail(l,p=p):
   a=amap[p['area']]; resources=''.join(f'<p><a class="text-link" href="{external(x["url"])}">{esc(x["label"])} ↗</a></p>' for x in p['links']) or ''
   people=', '.join(esc(x) for x in p['contributors']) or ''

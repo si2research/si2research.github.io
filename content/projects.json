@@ -21,5 +21,26 @@
       "Sanjay Das"
     ],
     "links": []
+  },
+  {
+    "slug": "agentic-cosmology",
+    "title": "Agentic Cosmological Simulation on Frontier",
+    "area": "hpc",
+    "areas": [
+      "hpc",
+      "autonomous"
+    ],
+    "summary": "COSMOAGENT connects natural-language scientific goals with expert-supervised cosmological simulations on Frontier.",
+    "status": "Ongoing · INCITE 2026",
+    "body": "A multi-agent workflow for planning, configuring, executing, debugging, and analyzing cosmological simulations, with scientists retaining control of critical decisions.",
+    "contributors": [
+      "Brant Robertson (PI)",
+      "Tirthankar Ghosal",
+      "Yuan-Sen Ting",
+      "Sanjay Das",
+      "Diego Garza",
+      "Jinchu Li"
+    ],
+    "links": []
   }
 ]

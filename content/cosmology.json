@@ -1,0 +1,44 @@
+{
+  "name": "COSMOAGENT",
+  "title": "Agentic Cosmological Simulation on Frontier",
+  "question": "Can AI agents orchestrate leadership-scale cosmological simulations while scientists remain in control?",
+  "goal": "Study the Lyman-α forest and signatures of dynamical dark energy by connecting high-resolution simulations with scientific observations.",
+  "approach": "A scientist supplies an experiment goal in natural language. Planner, execution, debugger, and result-analyzer agents coordinate a Plan → Run → Debug → Analyze loop through a unified toolset connected to Frontier. Results can inform the next experiment, with experts supervising critical decisions.",
+  "achievements": [
+    "Completed an initial agentic cosmological simulation on Frontier.",
+    "Demonstrated the workflow at 256³ resolution and scaled to 4096³.",
+    "Connected natural-language scientific goals to exascale execution.",
+    "Demonstrated failure handling, debugging, and replanning within the simulation workflow."
+  ],
+  "scope_note": "The supplied slides distinguish a 100-megaparsec, 4096³ agentic simulation from a larger 300-megaparsec, 12600³ expert-run simulation. Extending the agentic workflow to larger simulations remains an objective.",
+  "leadership": [
+    {
+      "name": "Brant Robertson",
+      "role": "Principal Investigator"
+    },
+    {
+      "name": "Tirthankar Ghosal",
+      "role": "Project / facility leadership"
+    },
+    {
+      "name": "Yuan-Sen Ting",
+      "role": "Project / facility leadership"
+    }
+  ],
+  "members": [
+    "Sanjay Das",
+    "Diego Garza",
+    "Jinchu Li"
+  ],
+  "institutions": [
+    "Oak Ridge National Laboratory (ORNL)",
+    "University of California, Santa Cruz (UCSC)",
+    "The Ohio State University (OSU)",
+    "AMD"
+  ],
+  "program": "INCITE 2026",
+  "support": "ASCR · U.S. Department of Energy, Office of Science",
+  "publication": "Das, S., et al. — manuscript in preparation.",
+  "poster": "AI-Powered Cosmological Simulation for Dark Energy Signatures",
+  "provenance": "Scientific scope, achievements, leadership, program, and collaborations transcribed from project-owner-supplied slides. Poster title lightly copyedited for display; award supplied by project owner."
+}

@@ -93,3 +93,9 @@ The workflow builds and checks `dist/`, then publishes that generated directory.
 ### If the homepage shows the README or project links return 404
 
 Confirm **Pages → Source → GitHub Actions** first. Branch publishing and the custom deployment workflow can overwrite each other when both are active. After correcting the source, rerun **Deploy SI² to GitHub Pages** and check its final deployment result. A successful **Check website** run validates the source but does not publish it.
+
+## COSMOAGENT and ORPA recognition
+
+The owner-supplied COSMOAGENT project is described in content/cosmology.json and rendered by cosmology.py. It appears in Projects, AI for HPC, Autonomous Labs, and homepage highlights. The workflow illustration in assets/cosmoagent-workflow.svg is an original schematic based on supplied slides, not a simulation output. The demonstrated agentic resolution is 4096³; the larger 12600³ expert run is explicitly distinguished. Original slide/poster files can be uploaded to artifacts/agentic-cosmology/ and will render automatically.
+
+ORPEX President’s Award, ORPA All-Around Excellence Award, first-place poster recognition, and Sanjay’s Research Co-Chair role use information supplied by the project owner. October 2 is treated as the announcement date, not an independently verified ceremony date.
