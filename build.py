@@ -74,9 +74,7 @@ for a in areas:
 for p in projects:
  if p['slug'] in ('ai4labops','ai-for-hpc'): continue
  if p['slug']=='algorithm-discovery-for-science':
-  from qatalyst import render as qatalyst_page
-  page('projects/'+p['slug'],p['title'],'projects',lambda l:qatalyst_page(l,hero,section,read,project=True))
-  continue
+  continue  # Published from the supplied standalone HTML below.
  if p['slug']=='quantum-claw':
   from quantum import project_page as quantum_page
   page('projects/quantum-claw',p['title'],'projects',lambda l:quantum_page(l,hero,section,read))
@@ -107,4 +105,6 @@ register_community(page,hero,section,read)
 page('404','Page not found','',lambda l:hero('A little off the map.','This page could not be found. Continue exploring the SI² portfolio.',l)+section(f'<a class="button" href="{l()}">Return home →</a>'))
 # A relative-path-safe 404 for GitHub Pages repositories, where the request depth is unknown.
 (OUT/'404.html').write_text('<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Page not found | SI²</title><body style="font:18px system-ui;background:#f7f9fc;color:#172337;padding:10vw"><h1>Page not found.</h1><p>Check the address or use your browser’s Back button to return to SI².</p></body></html>')
+from qatalyst import publish
+publish(ROOT, OUT)
 print(f'Built {len(list(OUT.rglob("*.html")))} HTML pages in {OUT}')

@@ -4,7 +4,7 @@ From one researcher to a shared scientific workspace: what we learned about AI t
 
 **MIT Science Hackathon · 5 min read**
 
-**Team:** Sanjay Das, Ethan Seefried, Chris, Tahisha, Shaziaviedi
+**Team:** Sanjay Das, Ethan Seefried, Chris Kellogg, Tahisha Jain, Nafiza Shazia Aviedi
 
 ## Start with a paragraph, end with a test
 
@@ -58,7 +58,7 @@ Our mission at SI² is to connect scientific reasoning with experimentation and 
 
 ## Team and support
 
-Built by Sanjay Das, Ethan Seefried, Chris, Tahisha, and Shaziaviedi. The project used NVIDIA ALCHEMI, Sonnet, and fine-tuned NVIDIA Nemotron Bolt; Claude and GPT Sol supported the build. We thank Claude for $100 in API support for building the project, separate from reported experiment-cost estimates. The quantum report does not isolate ALCHEMI’s performance contribution.
+Built by Sanjay Das, Ethan Seefried, Chris Kellogg, Tahisha Jain, and Nafiza Shazia Aviedi. The project used NVIDIA ALCHEMI, Sonnet, and fine-tuned NVIDIA Nemotron Bolt; Claude and GPT Sol supported the build. We thank Claude for $100 in API support for building the project, separate from reported experiment-cost estimates. The quantum report does not isolate ALCHEMI’s performance contribution.
 
 [Source code](https://github.com/eseefried/Algo-Discovery-Sim) · [Architecture](https://github.com/eseefried/Algo-Discovery-Sim/blob/main/docs/architecture.md)
 

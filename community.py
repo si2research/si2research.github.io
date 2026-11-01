@@ -14,10 +14,9 @@ def register(page,hero,section,read):
  def cite_text(text):
   return esc(text).replace('[1]','<a class="inline-citation" href="#reference-1">[1]</a>')
  for post in posts:
+  if post['slug']=='qatalyst-algorithm-discovery-for-science':
+   continue  # Its standalone HTML is published by build.py.
   def detail(l,p=post):
-   if p['slug']=='qatalyst-algorithm-discovery-for-science':
-    from qatalyst import render
-    return render(l,hero,section,read)
    body=''
    if p.get('announcement'):body+=f'<div class="blog-announcement"><span class="status-badge accepted">{esc(p["announcement"])}</span><span>{esc(p["reading_time"])}</span></div>'
    if p.get('award_note'):
