@@ -656,13 +656,22 @@ for i in range(n):
   </div>
 </section>
 
-<!-- ================= MATERIALS TRANSFER ================= -->
-<section class="col" aria-labelledby="materials-transfer">
-  <h2 id="materials-transfer">Domain transfer: from quantum circuits to materials science</h2>
-  <p>Can the same abstract-to-experiment loop work for atomic structures? We tested it on an unseen basin-hopping paper about Lennard-Jones clusters: finding low-energy arrangements of atoms by turning a rugged energy landscape into a staircase of local minima. Agents received the abstract and a Python execution contract; the full paper and hidden checks stayed with the evaluator.</p>
-  <p>A sequential agent and a three-agent decentralized swarm used the same fine-tuned Nemotron Bolt checkpoint, seed, tests, and search-budget ceilings. Each used 10 model calls and about 26,000 search tokens on one GPU with serialized generation. The swarm recorded three energy deaths and three replacements, but its initial agents proposed identical reconstructions.</p>
-  <p>Both systems passed <strong>0 of 3</strong> public-plus-hidden cases: a Python <code>NameError</code> stopped execution before usable atomic coordinates were returned. The result locates an implementation/runtime integration gap; physical-method accuracy remains unestablished. This one-paper, one-seed pilot shows how the workflow can be exercised in another domain, not successful scientific transfer or a swarm advantage. The next step is to repair the interface, rerun independent numerical checks, and broaden the evaluation.</p>
-  <p class="fine">Materials pilot snapshot: November 1, 2026, 12:42 p.m. EST. Shared search ceilings: 10 model calls, 90,000 tokens, 840 seconds, and 12 simulations. Run order was not randomized; timings do not measure distributed speedup.</p>
+<!-- ================= DOMAIN TRANSFER ROADMAP ================= -->
+<section aria-labelledby="materials-transfer">
+  <div class="col">
+    <h2 id="materials-transfer">One discovery loop. Many scientific frontiers.</h2>
+    <p>Quantum science is our starting point. Our vision is to bring the same spirit of exploration to materials science, biology, and protein research—helping ideas become experiments across disciplines.</p>
+    <p>For materials science, we have fine-tuned a Nemotron model and are exploring NVIDIA ALCHEMI alongside our running swarm workflow. Looking ahead, we want AI teams to help researchers explore new materials, understand proteins, and pursue scientific questions together.</p>
+  </div>
+  <div class="wide">
+    <figure>
+      <picture>
+        <source media="(max-width:600px)" srcset="/assets/blog/qatalyst-future-mobile.svg">
+        <img src="/assets/blog/qatalyst-future.svg" alt="Research roadmap from quantum science to materials science, biology, and proteins, connected by a shared discovery loop." loading="lazy" width="1000" height="350">
+      </picture>
+      <figcaption>Our research roadmap: adapt the discovery loop to new scientific questions, with researchers guiding each step.</figcaption>
+    </figure>
+  </div>
 </section>
 
 <!-- ================= MISSION & FUTURE ================= -->

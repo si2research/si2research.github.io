@@ -52,13 +52,13 @@ The completed Sonnet comparison tells a more useful story than “more agents wi
 
 Math recovery: matched 84-paper cohort. Simulation: full 96-paper cohort. Costs: saved calls across each experiment; estimates, not invoices.
 
-## Domain transfer: from quantum circuits to materials science
+## One discovery loop. Many scientific frontiers.
 
-Can the same abstract-to-experiment loop work for atomic structures? We tested it on an unseen basin-hopping paper about Lennard-Jones clusters: finding low-energy arrangements of atoms by turning a rugged energy landscape into a staircase of local minima. Agents received the abstract and a Python execution contract; the full paper and hidden checks stayed with the evaluator.
+Quantum science is our starting point. Our vision is to bring the same spirit of exploration to materials science, biology, and protein research—helping ideas become experiments across disciplines.
 
-A sequential agent and a three-agent decentralized swarm used the same fine-tuned Nemotron Bolt checkpoint, seed, tests, and search-budget ceilings. Each used 10 model calls and about 26,000 search tokens on one GPU with serialized generation. The swarm recorded three energy deaths and three replacements, but its initial agents proposed identical reconstructions.
+For materials science, we have fine-tuned a Nemotron model and are exploring NVIDIA ALCHEMI alongside our running swarm workflow. Looking ahead, we want AI teams to help researchers explore new materials, understand proteins, and pursue scientific questions together.
 
-Both systems passed 0 of 3 public-plus-hidden cases: a Python NameError stopped execution before usable atomic coordinates were returned. The result locates an implementation/runtime integration gap; physical-method accuracy remains unestablished. This one-paper, one-seed pilot shows how the workflow can be exercised in another domain, not successful scientific transfer or a swarm advantage. The next step is to repair the interface, rerun independent numerical checks, and broaden the evaluation.
+![Research roadmap from quantum science to materials science, biology, and proteins.](assets/blog/qatalyst-future.svg)
 
 ## From reconstruction toward discovery
 

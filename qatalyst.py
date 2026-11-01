@@ -18,5 +18,5 @@ def publish(root, output):
         def asset(match):
             relative = os.path.relpath(output / match[2].lstrip('/'), destination.parent)
             return match[1] + relative.replace(os.sep, '/') + match[3]
-        html = re.sub(r'((?:href|src)=")(/assets/[^"<>]+)(")', asset, source)
+        html = re.sub(r'((?:href|src|srcset)=")(/assets/[^"<>]+)(")', asset, source)
         destination.write_text(html)
