@@ -52,6 +52,14 @@ The completed Sonnet comparison tells a more useful story than “more agents wi
 
 Math recovery: matched 84-paper cohort. Simulation: full 96-paper cohort. Costs: saved calls across each experiment; estimates, not invoices.
 
+## Domain transfer: from quantum circuits to materials science
+
+Can the same abstract-to-experiment loop work for atomic structures? We tested it on an unseen basin-hopping paper about Lennard-Jones clusters: finding low-energy arrangements of atoms by turning a rugged energy landscape into a staircase of local minima. Agents received the abstract and a Python execution contract; the full paper and hidden checks stayed with the evaluator.
+
+A sequential agent and a three-agent decentralized swarm used the same fine-tuned Nemotron Bolt checkpoint, seed, tests, and search-budget ceilings. Each used 10 model calls and about 26,000 search tokens on one GPU with serialized generation. The swarm recorded three energy deaths and three replacements, but its initial agents proposed identical reconstructions.
+
+Both systems passed 0 of 3 public-plus-hidden cases: a Python NameError stopped execution before usable atomic coordinates were returned. The result locates an implementation/runtime integration gap; physical-method accuracy remains unestablished. This one-paper, one-seed pilot shows how the workflow can be exercised in another domain, not successful scientific transfer or a swarm advantage. The next step is to repair the interface, rerun independent numerical checks, and broaden the evaluation.
+
 ## From reconstruction toward discovery
 
 Our mission at SI² is to connect scientific reasoning with experimentation and discovery. Qatalyst makes that connection visible: an idea becomes a candidate, a candidate meets a test, and the evidence informs the next attempt. The next steps are stronger functional checks, completed cohorts, repeated budget-matched comparisons, and ablations that isolate each model’s contribution. Beyond reconstruction, we want to test whether this loop can generate useful new algorithmic variations. That ambition depends on better evidence, not simply a larger swarm. Bring a scientific question, a rigorous test, or an engineering improvement—and help us build the next experiment.
