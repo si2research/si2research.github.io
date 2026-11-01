@@ -73,6 +73,10 @@ for a in areas:
  page('research/'+a['slug'],a['title'],'research',area_detail)
 for p in projects:
  if p['slug'] in ('ai4labops','ai-for-hpc'): continue
+ if p['slug']=='algorithm-discovery-for-science':
+  from qatalyst import render as qatalyst_page
+  page('projects/'+p['slug'],p['title'],'projects',lambda l:qatalyst_page(l,hero,section,read,project=True))
+  continue
  if p['slug']=='quantum-claw':
   from quantum import project_page as quantum_page
   page('projects/quantum-claw',p['title'],'projects',lambda l:quantum_page(l,hero,section,read))
