@@ -1,67 +1,65 @@
-# Qatalyst: from scientific abstracts to executable experiments
+# Qatalyst: can a team of AI agents turn an abstract into an experiment?
 
-An abstract is a starting point. Qatalyst brings ideas, code, simulation, and critique into one inspectable loop for Algorithm Discovery for Science.
+From one researcher to a shared scientific workspace: what we learned about AI teams, simulation, and the search for algorithms.
 
-**MIT Science Hackathon · Algorithm Discovery for Science**
+**MIT Science Hackathon · 5 min read**
 
 **Team:** Sanjay Das, Ethan Seefried, Chris, Tahisha, Shaziaviedi
 
-[Source code](https://github.com/eseefried/Algo-Discovery-Sim) · [Architecture notes](https://github.com/eseefried/Algo-Discovery-Sim/blob/main/docs/architecture.md)
+## Start with a paragraph, end with a test
 
-## An idea deserves an experiment
+A scientific abstract is a promise in miniature. It describes what a method can do, but leaves much of the work between the idea and the experiment unstated. For the MIT Science Hackathon, we built Qatalyst to explore that missing middle: give AI agents only a quantum-computing abstract, then ask them to propose equations, write Qiskit code, and test a circuit in simulation. The larger question is simple: how should we organize AI researchers so their ideas become evidence?
 
-Imagine reading a short description of a quantum algorithm and asking: can we turn this into something we can actually test? That gap—from a promising idea to an executable experiment—is the starting point for Qatalyst, our MIT Science Hackathon project within Algorithm Discovery for Science. Our goal is to make scientific reasoning actionable, inspectable, and easier to build upon.
+## One researcher—or a team?
+
+Imagine reconstructing a recipe from its description. One cook can plan every step and prepare the dish. A head chef can divide the work among assistants. Or cooks can choose tasks from a shared board, compare attempts, and build on one another’s work. AI systems have similar choices. “Multi-agent” means several agents participate; “centralized” and “decentralized” describe how they coordinate. More agents bring more possible approaches, along with more communication and cost.
+
+![Single agent organization](assets/blog/qatalyst-single.svg)
+
+![Centralized agent organization](assets/blog/qatalyst-centralized.svg)
+
+![Decentralized agent organization](assets/blog/qatalyst-decentralized.svg)
+
+## A shared ledger turns ideas into a survival game
+
+Qatalyst explores coordination through a shared scientific notebook: a ledger of tasks, candidate methods, test results, feedback, energy, and lineage. The historical ledger swarm used workers bidding on dependent contracts. The newer native hybrid adds an energy-based lifecycle around candidate development and review. Think of energy as a limited opportunity to keep searching. In the hybrid, progress rewards are deferred until a candidate executes and passes agent review. An agent that exhausts its energy can be retired and replaced, within run limits. A replacement varies a successful donor’s strategy when one is available; otherwise it explores afresh. This is virtual search bookkeeping, separate from API spending and software crashes.
+
+## What happens inside an attempt
+
+The hybrid maintains three logical agents: two can develop implementations, while one stays outside their implementation chains to review. A fine-tuned NVIDIA Nemotron Bolt model proposes numbered equations locally. Sonnet plans methods, assembles specifications, generates code, and reviews candidates. Code builds in Docker and runs in Qiskit Aer; failures and criticism feed the next revision. Work is coordinated through shared state, but the ledger, model services, and GPU are shared on one host. This is not a fully distributed system. Our Sonnet-only experiments also test a single agent, a ledger swarm, and an Abstract2Method search swarm.
 
 ![Qatalyst architecture: shared task ledger, researcher and reviewer agents, Nemotron and Sonnet services, Qiskit simulation, and energy-based replacement.](assets/blog/qatalyst-architecture.png)
 
 Native hybrid architecture from the project repository. Click to open the full-resolution diagram.
 
-## A research team in a shared workspace
+## A concrete example: finding one answer among sixteen
 
-Qatalyst’s lobster-themed architecture gives cooperating AI agents a shared task ledger: candidate methods, feedback, virtual energy, and lineage. In the native hybrid, two agents can develop implementations while a third remains outside their implementation chains for review. Local Nemotron proposes numbered equations; Sonnet assembles plans and specifications, writes Qiskit code, and reviews results. Docker and Qiskit Aer provide the build-and-simulation stage. Failed or questioned candidates return for revision; depleted agents can be replaced. Review is a checkpoint, and independent functional tests remain essential.
-
-## Three ways to organize the work
-
-The completed Sonnet study compares a single specification-writing agent, a three-worker ledger swarm, and Abstract2Method: a search swarm starting with six agents and allowing up to ten. All use a shared final code stage. A separate, newer hybrid combines a fine-tuned NVIDIA Nemotron Bolt equation generator with Sonnet coordination and review. The local adapter is trained for abstract-to-numbered-LaTeX generation; the hybrid is not an all-local system. These configurations let us ask when coordination helps, how much it costs, and which scientific checks it still needs.
-
-## What the completed benchmark tells us
-
-Across the same 84 papers and 320 labelled main equations, single-agent Sonnet recovered 54 matching equations, compared with 26 for the ledger swarm and 46 for Abstract2Method. Across all 96 attempted papers, Abstract2Method reached simulation on 93, compared with 77 for the single agent and 48 for the ledger. Estimated API totals were $7.52, $13.67, and $61.97 respectively. Single-agent Sonnet offered the strongest measured cost–math tradeoff; Abstract2Method produced more runnable circuits at about 8.2 times the total cost. Equation similarity measures textual and structural matching, and simulation yield measures execution. Neither establishes full algorithm correctness.
-
-## Example 1 · Find the marked answer
-
-Think of sixteen labelled cards with one marked answer. Grover search amplifies the probability of measuring that answer. In a saved four-qubit example, Qatalyst generated and simulated a circuit with marked value 5, written 0101 in binary, and three iterations. The target received 96.13% of the simulated probability; each other state received about 0.258%. The candidate completed execution and agent review in 156.33 seconds at an estimated $0.2543 in paid usage. This illustrates a complete proposal–repair–execution–review path for one instance; it does not establish the source paper’s broader gate-error claims.
+Picture sixteen cards, with one marked 0101. A four-qubit Grover circuit aims to amplify the chance of measuring that card. In one saved hybrid run, the generated circuit assigned 96.13% of its simulated probability to 0101 after three iterations. The attempt took 156 seconds and about $0.25 in estimated paid API usage. A separate affine-rule pilot recovered both hidden components of f(x) = a·x ⊕ b in 28 of 28 small parameter instances, under explicit oracle assumptions. These examples show what a testable reconstruction looks like; they do not establish the source papers’ full claims or novel algorithm discovery.
 
 ![Grover simulation: target 0101 has 96.13 percent probability, versus 3.87 percent shared by the other fifteen states.](assets/blog/qatalyst-grover.svg)
 
 One saved four-qubit simulation, not a general algorithm-correctness score. Values from the supplied November 1 report.
 
-## Example 2 · Recover a hidden rule
+## The result: teams help some things, not everything
 
-An affine Boolean function is a compact hidden rule: f(x) = a·x ⊕ b. Here a selects which input bits matter, and b flips the output. In a separate corrected hybrid pilot, the generated method recovered both hidden components in 28 of 28 tested parameter instances across one to three data qubits. For n = 2, a = 1, b = 1, the simulator returned 101 in all 1,024 shots. The oracle parameters are explicit gate-construction inputs, and controlled-phase-oracle access is assumed. This is evidence for the tested finite contract, rather than black-box query complexity or a new mathematical discovery.
+The completed Sonnet comparison tells a more useful story than “more agents win.” On the same 84 papers, the single agent recovered the most matching main equations and had the lowest total estimated API cost. Across the full 96-paper cohort, Abstract2Method produced more circuits that reached simulation—93 versus 77—but cost about 8.2 times as much. The newer hybrid snapshot had 15 reviewed-ready outcomes among 21 completed papers out of 65 planned. Its selected equations retained no native proposals verbatim, so Nemotron’s incremental benefit remains unestablished. Execution, equation matching, and agent approval are different measures; independent correctness checks remain essential.
 
-## The hybrid snapshot: promising engineering, open attribution
+| Configuration | Equations matched / 320 | Simulated / 96 | Est. API total |
+| --- | --- | --- | --- |
+| Single Sonnet | 54 | 77 | $7.52 |
+| Ledger swarm | 26 | 48 | $13.67 |
+| Abstract2Method | 46 | 93 | $61.97 |
 
-The November 1, 2026 report records 21 completed papers out of 65 planned in the hybrid batch. Fifteen reached reviewed-ready status: execution plus approval by another agent outside the implementation chain. Median per-paper time was 156.33 seconds; estimated paid Sonnet usage totalled $6.14. These partial-batch outcomes are separate from the completed Sonnet benchmark. None of the selected candidates’ assembled equations retained native proposals verbatim. Sonnet supplied substantial reconstruction and repair; a matched Sonnet-only ablation is needed to establish Nemotron’s incremental contribution. Local hardware and serving costs are excluded.
+Math recovery: matched 84-paper cohort. Simulation: full 96-paper cohort. Costs: saved calls across each experiment; estimates, not invoices.
 
-## A useful failure points to the next experiment
+## From reconstruction toward discovery
 
-For a small N = 15 order-finding instance, code built and simulated, but review questioned the consistency of work-register initialization. The run ended without an approved candidate after two energy-depletion deaths and two replacements. The objection was not independently reproduced as a valid-instance numerical counterexample, so this remains unresolved. Preserving that distinction is part of scientific rigor: a running circuit, an agent’s approval, and a validated scientific result are different milestones.
+Our mission at SI² is to connect scientific reasoning with experimentation and discovery. Qatalyst makes that connection visible: an idea becomes a candidate, a candidate meets a test, and the evidence informs the next attempt. The next steps are stronger functional checks, completed cohorts, repeated budget-matched comparisons, and ablations that isolate each model’s contribution. Beyond reconstruction, we want to test whether this loop can generate useful new algorithmic variations. That ambition depends on better evidence, not simply a larger swarm. Bring a scientific question, a rigorous test, or an engineering improvement—and help us build the next experiment.
 
-## Built with a practical AI toolkit
+## Team and support
 
-The team used NVIDIA ALCHEMI, Sonnet for single-agent and swarm experiments, and a fine-tuned NVIDIA Nemotron Bolt model for local equation generation in the hybrid swarm. Claude and GPT Sol supported the build. We acknowledge the $100 in Claude API support provided for building the project. This support is distinct from the report’s usage-based experiment-cost estimates. The supplied report evaluates quantum reconstruction; it does not isolate an ALCHEMI performance contribution.
+Built by Sanjay Das, Ethan Seefried, Chris, Tahisha, and Shaziaviedi. The project used NVIDIA ALCHEMI, Sonnet, and fine-tuned NVIDIA Nemotron Bolt; Claude and GPT Sol supported the build. We thank Claude for $100 in API support for building the project, separate from reported experiment-cost estimates. The quantum report does not isolate ALCHEMI’s performance contribution.
 
-## Our mission: a shorter path from question to evidence
-
-SuperIntelligence for Science connects scientific reasoning, experimentation, and discovery. Qatalyst makes that mission tangible through an inspectable loop: propose a method, implement it, execute a test, challenge the result, and revise. Today’s evidence concerns reconstruction of described quantum algorithms. The longer-term ambition is to help researchers explore new methods with explicit assumptions, reproducible artifacts, and tests strong enough to distinguish a plausible idea from a useful scientific contribution.
-
-## What comes next—and where you can contribute
-
-The next milestones are independent functional contracts, completed native and hybrid cohorts, budget-matched comparisons over repeated seeds, and clearer attribution of each model’s contribution. Beyond reconstruction, we want to investigate whether execution-guided search can propose useful algorithmic variations and whether domain tools can extend this workflow to other scientific questions. Those are research directions to test. Quantum scientists can sharpen correctness criteria; engineers can strengthen reproducibility; domain experts and curious newcomers can help define meaningful questions. Explore the source, inspect the evidence, and bring a problem worth testing.
-
-## The people behind Qatalyst
-
-Sanjay Das, Ethan Seefried, Chris, Tahisha, and Shaziaviedi developed this MIT Science Hackathon project. Their shared aim is to build scientific AI that makes its work visible and gives researchers a stronger starting point for the next experiment.
+[Source code](https://github.com/eseefried/Algo-Discovery-Sim) · [Architecture](https://github.com/eseefried/Algo-Discovery-Sim/blob/main/docs/architecture.md)
 
 *Results snapshot: November 1, 2026, 11:21:52 a.m. EST. Based on the team-supplied algo-sim-REPORT.md. Native and hybrid batches are partial; reported readiness is execution plus agent review. The current evidence does not establish novel discovery, an evolutionary advantage, or full-paper reproduction.*

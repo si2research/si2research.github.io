@@ -1,0 +1,3 @@
+{
+  "text": "Built by Sanjay Das, Ethan Seefried, Chris, Tahisha, and Shaziaviedi. The project used NVIDIA ALCHEMI, Sonnet, and fine-tuned NVIDIA Nemotron Bolt; Claude and GPT Sol supported the build. We thank Claude for $100 in API support for building the project, separate from reported experiment-cost estimates. The quantum report does not isolate ALCHEMI\u2019s performance contribution."
+}
