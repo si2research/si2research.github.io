@@ -1,5 +1,69 @@
 [
   {
+    "slug": "qatalyst-algorithm-discovery-for-science",
+    "tag": "Autonomous science · MIT Science Hackathon",
+    "title": "Algorithm Discovery for Science: turning ideas into testable experiments",
+    "summary": "From research abstracts to executable experiments: Qatalyst explores how cooperating AI agents can support a transparent, testable path toward autonomous discovery.",
+    "related": "projects/algorithm-discovery-for-science/",
+    "reading_time": "6 min read",
+    "announcement": "MIT Science Hackathon · Qatalyst",
+    "sections": [
+      {
+        "heading": "From a scientific idea to an experiment",
+        "body": "A research abstract can describe a powerful idea in a few paragraphs. Turning that idea into equations, working software, and a convincing experiment can take much longer. What if AI agents could help researchers cross that gap—and leave a clear record of every proposal, test, and revision? Algorithm Discovery for Science explores that question. Our MIT Science Hackathon prototype, Qatalyst, starts with quantum-algorithm abstracts and attempts to reconstruct executable methods from their descriptions."
+      },
+      {
+        "heading": "Meet the team",
+        "body": "The project brings together Sanjay Das, Ethan Seefried, Chris, Tahisha, and Shaziaviedi. For the MIT Science Hackathon, the team explored a practical starting point for autonomous discovery: a system that can propose an approach, implement it, run an experiment, and respond to criticism. Qatalyst is the prototype through which we investigate that broader research direction."
+      },
+      {
+        "heading": "A small research team, expressed in software",
+        "body": "Imagine a research team with a shared notebook: one colleague proposes a method, another turns it into code, and a reviewer asks whether the evidence supports the claim. Qatalyst organizes three cooperating AI agents around a shared task board. Two can develop implementations, while a third stays outside implementation chains to provide independent review. The agents have a virtual energy budget; when one exhausts it, a replacement can inherit a successful strategy with a small variation or try a fresh approach. The lobster-themed agents give this experimental workflow its personality."
+      },
+      {
+        "heading": "Inside the discovery loop",
+        "body": "A locally hosted, fine-tuned Nemotron model proposes numbered equations in LaTeX. Sonnet plans methods, assembles specifications, writes Qiskit code, and reviews results. Generated code builds in an isolated Docker worker, and Qiskit Aer simulates the quantum circuits. The agents operate on one host and share model services. In plain language, the workflow moves from an idea to a mathematical proposal, then to code, a simulated experiment, criticism, and revision. Each stage creates evidence that a researcher can inspect."
+      },
+      {
+        "heading": "An encouraging reconstruction—with a precise scope",
+        "body": "One supplied abstract concerned an affine Boolean function, f(x) = a·x ⊕ b: a simple rule with a hidden bit string a and an offset b. The task was to recover both. The swarm selected a circuit combining an offset readout with a Bernstein–Vazirani step. For n = 2, a = 1, and b = 1, Aer returned 101 in all 1,024 shots, encoding the expected hidden values. Separate small-instance checks recovered both values in 28 of 28 cases across one to three data qubits. The recorded swarm run took about 4.4 minutes, with estimated paid usage of $0.31."
+      },
+      {
+        "heading": "What that result establishes",
+        "body": "These checks support a limited reconstruction result under the implemented assumptions. The circuit compiles explicit oracle parameters into gates and assumes controlled-phase-oracle access. It does not establish the source paper’s black-box query complexity or its claims about incompletely defined functions. Attribution also matters: Sonnet rejected all eight native equation proposals and assembled the successful specification itself. Understanding which component contributed to a result is essential to improving the system."
+      },
+      {
+        "heading": "A useful failure is part of the science",
+        "body": "A second abstract concerned order finding with imperfect gates. The swarm generated a small N = 15 circuit that built and simulated, but the default-zero-input run concentrated on 00000000. Review requested alignment of the work-register initialization across the specification, circuit, and runner. The system attempted repairs, recorded two agent deaths and two replacements, and reached its time limit without an approved candidate. The reviewer’s objection was not independently confirmed as a numerical counterexample, so the outcome remains unresolved. This case exposes a concrete verification task: successful execution alone cannot establish scientific correctness."
+      },
+      {
+        "heading": "Why this belongs in autonomous science",
+        "body": "SI²’s mission connects scientific reasoning, experimentation, and discovery. Algorithm Discovery for Science puts that connection into a testable workflow: translate a research goal into a candidate method, execute it, examine the evidence, and revise the next step. The current prototype studies reconstruction of described algorithms; original algorithm discovery remains a longer-term research goal. Preserved proposals, code, feedback, and strategy lineage make the process inspectable, while human researchers define the questions, evaluate assumptions, and decide what the results justify."
+      },
+      {
+        "heading": "The next questions are an invitation",
+        "body": "Our next priorities are independent functional checks, clearer separation of reconstruction from novelty, and evaluations that identify which parts of the agent workflow improve outcomes. A stronger system should explain why a candidate works, when it fails, and what evidence would change its conclusion. Quantum researchers can help sharpen the tests; software engineers can strengthen reproducibility; researchers across disciplines can bring problems with clear success criteria. If you are curious about how an idea becomes an experiment, there is a place for your perspective in this work. Explore the project and connect with SI² to help shape the next questions."
+      }
+    ],
+    "resources_heading": "Join the exploration",
+    "resources": [
+      {
+        "label": "Explore the project",
+        "path": "projects/algorithm-discovery-for-science/"
+      },
+      {
+        "label": "Autonomous Labs research",
+        "path": "research/autonomous/"
+      },
+      {
+        "label": "Connect with SI²",
+        "path": "contact/"
+      }
+    ],
+    "source_note": "Experimental details are drawn from the team-supplied Qatalyst draft. These are prototype observations, not a claim of novel algorithm discovery or a peer-reviewed evaluation.",
+    "provenance": "Qatalyst experimental narrative supplied in algo-dis-BLOG.md; MIT Science Hackathon context and contributor names supplied by the project owner."
+  },
+  {
     "slug": "quantumscience-claw-verifiable-science",
     "tag": "QuantumScience Claw · Research in progress",
     "title": "QuantumScience Claw: a correct calculation is only part of the story",

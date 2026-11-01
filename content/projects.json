@@ -59,5 +59,26 @@
       "Tirthankar Ghosal"
     ],
     "links": []
+  },
+  {
+    "slug": "algorithm-discovery-for-science",
+    "title": "Algorithm Discovery for Science",
+    "area": "autonomous",
+    "summary": "From research abstracts to executable experiments: Qatalyst explores how cooperating AI agents can support a transparent, testable path toward autonomous discovery.",
+    "status": "MIT Science Hackathon prototype",
+    "body": "Algorithm Discovery for Science investigates how AI agents can turn scientific descriptions into executable, inspectable experiments. Its MIT Science Hackathon prototype, Qatalyst, coordinates mathematical proposals, Qiskit implementations, quantum-circuit simulation, independent agent review, and iterative revision. Initial small-instance reconstructions reveal both encouraging results and unresolved verification challenges. The longer-term goal is an evidence-driven discovery loop in which researchers can examine assumptions, reproduce tests, and distinguish successful reconstruction from scientific novelty.",
+    "contributors": [
+      "Sanjay Das",
+      "Ethan Seefried",
+      "Chris",
+      "Tahisha",
+      "Shaziaviedi"
+    ],
+    "links": [
+      {
+        "label": "Read the Qatalyst research story",
+        "url": "https://si2research.github.io/blogs/qatalyst-algorithm-discovery-for-science/"
+      }
+    ]
   }
 ]
