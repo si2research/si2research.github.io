@@ -183,6 +183,18 @@ td.n,th.n{text-align:right}
   .hero-fig .pulse{animation:pulse 2.4s ease-in-out 1}
   @keyframes pulse{0%{opacity:.25}60%{opacity:1}}
 }
+/* Hackathon photo journal: preserve the complete photographs and EXIF orientation. */
+.trip-heading{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.trip-heading h2{margin-bottom:0}
+.trip-note{font-size:.85rem;color:var(--muted)}
+.trip-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:20px}
+.trip-grid figure{margin:0;border:1px solid var(--rule);border-radius:14px;overflow:hidden;background:var(--wash)}
+.trip-grid a{overflow:hidden;background:#101f35}
+.trip-grid img{width:100%;aspect-ratio:4/3;object-fit:contain;image-orientation:from-image;transition:filter .2s}
+.trip-grid a:hover img{filter:brightness(1.08)}
+.trip-grid figcaption{padding:12px 16px;font-size:.9rem;color:var(--ink-2);line-height:1.5}
+.trip-grid figcaption strong{display:block;color:var(--ink);margin-bottom:3px}
+@media(max-width:600px){.trip-grid{grid-template-columns:1fr;gap:14px}}
 </style>
 </head>
 <body>
@@ -705,6 +717,16 @@ for i in range(n):
 </section>
 
 <!-- ================= BUILT WITH / CITE ================= -->
+<section class="wide" aria-labelledby="hackathon-trip">
+  <div class="trip-heading"><h2 id="hackathon-trip">From the MIT hackathon</h2><span class="trip-note">Field notes · Cambridge, Massachusetts</span></div>
+  <p>Qatalyst began as a shared experiment at the MIT Science Hackathon. A few moments from the people, workspace, and campus behind the prototype.</p>
+  <p class="trip-note">Select any photo to view it at full size.</p>
+  <div class="trip-grid"><figure><a href="/artifacts/algorithm-discovery-for-science/mit-hackathon-team.jpeg" aria-label="View full-size photo: The hackathon team"><img src="/artifacts/algorithm-discovery-for-science/mit-hackathon-team.jpeg" alt="A group photo during the MIT Science Hackathon." width="5712" height="4284" loading="lazy" decoding="async"></a><figcaption><strong>The hackathon team</strong>A group photo during the MIT Science Hackathon.</figcaption></figure>
+<figure><a href="/artifacts/algorithm-discovery-for-science/mit-hackathon-workspace.png" aria-label="View full-size photo: At the hackathon table"><img src="/artifacts/algorithm-discovery-for-science/mit-hackathon-workspace.png" alt="A moment together at the hackathon workspace." width="2982" height="1988" loading="lazy" decoding="async"></a><figcaption><strong>At the hackathon table</strong>A moment together at the hackathon workspace.</figcaption></figure>
+<figure><a href="/artifacts/algorithm-discovery-for-science/mit-hackathon-boston.jpeg" aria-label="View full-size photo: Cambridge, between experiments"><img src="/artifacts/algorithm-discovery-for-science/mit-hackathon-boston.jpeg" alt="Autumn colors and the Boston skyline during the trip." width="4032" height="3024" loading="lazy" decoding="async"></a><figcaption><strong>Cambridge, between experiments</strong>Autumn colors and the Boston skyline during the trip.</figcaption></figure>
+<figure><a href="/artifacts/algorithm-discovery-for-science/mit-hackathon-campus.jpeg" aria-label="View full-size photo: An evening at MIT"><img src="/artifacts/algorithm-discovery-for-science/mit-hackathon-campus.jpeg" alt="A campus snapshot in front of MIT’s illuminated dome." width="4032" height="3024" loading="lazy" decoding="async"></a><figcaption><strong>An evening at MIT</strong>A campus snapshot in front of MIT’s illuminated dome.</figcaption></figure></div>
+</section>
+
 <section class="col" aria-labelledby="built">
   <h2 id="built">Built with</h2>
   <div class="built">
